@@ -1,0 +1,218 @@
+generator client {
+  provider = "prisma-client"
+  output   = "../app/generated/prisma"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+// ==========================================
+// ENUMS
+// ==========================================
+
+enum BookingStatus {
+  en_attente @map("en attente")
+  confirmee  @map("confirmée")
+  refusee    @map("refusée")
+  annulee    @map("annulée")
+}
+
+enum NotificationType {
+  EMAIL
+  IN_APP
+}
+
+enum NotificationStatus {
+  PENDING
+  SENT
+  FAILED
+}
+
+// ==========================================
+// AUTH & USERS
+// ==========================================
+
+model AuthRole {
+  roleId             Int      @id @default(autoincrement()) @map("role_id")
+  name                String   @unique @db.VarChar(50)
+  /// Description du role de l'utilisateur dans le système
+  description         String
+  /// Nombre de réservations max en simultané pour ce type d'utilisateur
+  maxActiveBookings   Int      @map("max_active_bookings")
+
+  users        User[]
+  roleActions  RoleAction[]
+
+  @@map("auth_roles")
+}
+
+model User {
+  userId         Int      @id @default(autoincrement()) @map("user_id")
+  /// Pseudo unique, utilisé pour la connexion
+  username       String   @unique @db.VarChar(50)
+  /// Mot de passe hashé
+  password       String   @db.VarChar(255)
+  firstname      String   @db.VarChar(100)
+  lastname       String   @db.VarChar(100)
+  /// Utilisé pour la connexion et la réinitialisation du mot de passe
+  email          String   @unique @db.VarChar(150)
+  phone          String?  @db.VarChar(20)
+  /// Désactivation du compte sans suppression
+  enabled        Boolean  @default(true)
+  roleId         Int      @map("role_id")
+  /// Motif de désactivation par l'administrateur
+  disableReason  String?  @map("disable_reason")
+
+  role           AuthRole  @relation(fields: [roleId], references: [roleId], onDelete: Restrict)
+  bookings       Booking[]
+  logs           Log[]
+
+  @@map("users")
+}
+
+// ==========================================
+// ROOMS & EQUIPMENTS
+// ==========================================
+
+model Room {
+  roomId       Int      @id @default(autoincrement()) @map("room_id")
+  /// Nom ou numéro de la salle
+  name         String   @db.VarChar(100)
+  /// Nombre de places assises, sans compter celle du prof
+  capacity     Int
+  description  String?
+  /// Adresse / localisation de la salle
+  location     String   @db.VarChar(150)
+  /// Défini si la salle est réservable
+  bookable     Boolean  @default(true)
+
+  equipments   RoomEquipment[]
+  periods      Period[]
+
+  @@map("rooms")
+}
+
+model Equipment {
+  equipmentId  Int      @id @default(autoincrement()) @map("equipment_id")
+  /// Ex: tableau blanc, projecteur, ordinateur bureau
+  name         String   @unique @db.VarChar(100)
+
+  rooms        RoomEquipment[]
+
+  @@map("equipments")
+}
+
+model RoomEquipment {
+  roomId       Int      @map("room_id")
+  equipmentId  Int      @map("equipment_id")
+  /// Quantité de l'équipement présent dans la salle
+  quantity     Int      @default(1)
+  /// Indique si l'équipement peut être utilisé
+  usable       Boolean
+
+  room         Room      @relation(fields: [roomId], references: [roomId], onDelete: Cascade)
+  equipment    Equipment @relation(fields: [equipmentId], references: [equipmentId], onDelete: Restrict)
+
+  @@id([roomId, equipmentId])
+  @@map("room_equipments")
+}
+
+// ==========================================
+// PERIODS & BOOKINGS
+// ==========================================
+
+model Period {
+  periodId     Int      @id @default(autoincrement()) @map("period_id")
+  roomId       Int      @map("room_id")
+  /// Jour du créneau, lundi(1) à samedi(6)
+  dayOfWeek    Int      @map("day_of_week") @db.SmallInt
+  timeStart    DateTime @map("time_start") @db.Time()
+  timeEnd      DateTime @map("time_end") @db.Time()
+  note         String?  @db.VarChar(250)
+
+  room         Room      @relation(fields: [roomId], references: [roomId], onDelete: Cascade)
+  bookings     Booking[]
+
+  @@map("periods")
+}
+
+model Booking {
+  bookingId       Int           @id @default(autoincrement()) @map("booking_id")
+  userId          Int           @map("user_id")
+  periodId        Int           @map("period_id")
+  bookingDate     DateTime      @map("booking_date") @db.Date
+  startTime       DateTime      @map("start_time") @db.Time()
+  endTime         DateTime      @map("end_time") @db.Time()
+  status          BookingStatus @default(en_attente)
+  createdAt       DateTime      @default(now()) @map("created_at")
+  updatedAt       DateTime?     @map("updated_at")
+  cancelledAt     DateTime?     @map("cancelled_at")
+  cancelReason    String?       @map("cancel_reason")
+  refusalReason   String?       @map("refusal_reason")
+  bookingReason   String        @map("booking_reason")
+
+  user            User           @relation(fields: [userId], references: [userId], onDelete: Cascade)
+  period          Period         @relation(fields: [periodId], references: [periodId], onDelete: Restrict)
+  notifications   Notification[]
+
+  @@map("bookings")
+}
+
+// ==========================================
+// PERMISSIONS (RBAC)
+// ==========================================
+
+model Action {
+  actionId     Int      @id @default(autoincrement()) @map("action_id")
+  name         String   @unique @db.VarChar(100)
+  description  String?
+
+  roleActions  RoleAction[]
+  logs         Log[]
+
+  @@map("actions")
+}
+
+model RoleAction {
+  roleId       Int  @map("role_id")
+  actionId     Int  @map("action_id")
+
+  role         AuthRole @relation(fields: [roleId], references: [roleId], onDelete: Cascade)
+  action       Action   @relation(fields: [actionId], references: [actionId], onDelete: Cascade)
+
+  @@id([roleId, actionId])
+  @@map("role_actions")
+}
+
+// ==========================================
+// LOGS & NOTIFICATIONS
+// ==========================================
+
+model Log {
+  logId        Int      @id @default(autoincrement()) @map("log_id")
+  actionId     Int      @map("action_id")
+  userId       Int      @map("user_id")
+  details      String
+  createdAt    DateTime @default(now()) @map("created_at")
+
+  action        Action         @relation(fields: [actionId], references: [actionId], onDelete: Restrict)
+  user          User           @relation(fields: [userId], references: [userId], onDelete: Cascade)
+  notifications Notification[]
+
+  @@map("logs")
+}
+
+model Notification {
+  notificationId  Int                 @id @default(autoincrement()) @map("notification_id")
+  logId           Int                 @map("log_id")
+  bookingId       Int?                @map("booking_id")
+  type            NotificationType
+  status          NotificationStatus  @default(PENDING)
+  sentAt          DateTime?           @map("sent_at")
+
+  log             Log      @relation(fields: [logId], references: [logId], onDelete: Cascade)
+  booking         Booking? @relation(fields: [bookingId], references: [bookingId], onDelete: Cascade)
+
+  @@map("notifications")
+}
