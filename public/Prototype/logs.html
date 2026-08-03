@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<title>Historique des actions — RoomBook</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="topbar">
+  <div class="brand">Room<span>Book</span></div>
+  <nav>
+    <a href="accueil.html">Accueil</a>
+    <a href="liste-utilisateurs.html">Utilisateurs</a>
+    <a href="liste-salles.html">Salles</a>
+    <a href="statistiques.html">Statistiques</a>
+    <a href="logs.html" class="active">Historique</a>
+  </nav>
+  <div class="user-zone">
+    <a href="notifications.html">Notifications<span class="notif-badge">3</span></a>
+    <a href="profil.html">Administrateur</a>
+  </div>
+</div>
+
+<div class="page-wrap">
+  <div class="page-header">
+    <h1>Historique des actions</h1>
+  </div>
+
+  <div class="panel" style="margin-bottom:18px;">
+    <div class="field-row">
+      <div class="field">
+        <label>Date</label>
+        <input type="date">
+      </div>
+      <div class="field">
+        <label>Utilisateur</label>
+        <input type="text" placeholder="Nom ou email">
+      </div>
+      <div class="field">
+        <label>Type d'action</label>
+        <select>
+          <option>Toutes</option>
+          <option>Réservation créée</option>
+          <option>Réservation annulée</option>
+          <option>Demande validée</option>
+          <option>Demande refusée</option>
+          <option>Compte activé</option>
+          <option>Compte désactivé</option>
+        </select>
+      </div>
+    </div>
+  </div>
+
+  <div class="panel" style="padding:0;">
+    <table>
+      <tr><th>Date</th><th>Utilisateur</th><th>Action</th><th>Détail</th></tr>
+      <tr>
+        <td>18/07/2026 14:02</td><td>Marie Dupont</td><td>Réservation créée</td>
+        <td>Salle C01, créneau 09h–11h</td>
+      </tr>
+      <tr>
+        <td>18/07/2026 09:15</td><td>Administrateur</td><td>Compte activé</td>
+        <td>Sophie Rasoa</td>
+      </tr>
+      <tr>
+        <td>17/07/2026 16:40</td><td>Paul Rakoto</td><td>Demande refusée</td>
+        <td>Salle B12, motif : conflit d'horaire</td>
+      </tr>
+    </table>
+  </div>
+
+  <div style="margin-top:20px;">
+    <a href="accueil.html" class="btn-text">Retour à l'accueil</a>
+  </div>
+</div>
+
+</body>
+</html>

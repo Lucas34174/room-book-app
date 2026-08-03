@@ -1,26 +1,98 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --brun-950: #2b1c14;
+  --brun-900: #3d2a1c;
+  --brun-850: #46311f;
+  --brun-800: #4f3826;
+  --brun-750: #5a4030;
+  --brun-700: #6b4a30;
+  --brun-600: #8a6240;
+  --brun-500: #a67c52;
+  --brun-400: #c29b6f;
+  --brun-300: #d9bb95;
+  --brun-200: #ead9c0;
+  --brun-100: #f4ece0;
+  --brun-050: #faf5ec;
+  --encre: #241812;
+  --ligne: #d3bd9d;
+  --shadow-card: none;
+  --shadow-topbar: none;
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-brun-950: var(--brun-950);
+  --color-brun-900: var(--brun-900);
+  --color-brun-850: var(--brun-850);
+  --color-brun-800: var(--brun-800);
+  --color-brun-750: var(--brun-750);
+  --color-brun-700: var(--brun-700);
+  --color-brun-600: var(--brun-600);
+  --color-brun-500: var(--brun-500);
+  --color-brun-400: var(--brun-400);
+  --color-brun-300: var(--brun-300);
+  --color-brun-200: var(--brun-200);
+  --color-brun-100: var(--brun-100);
+  --color-brun-050: var(--brun-050);
+  --color-encre: var(--encre);
+  --color-ligne: var(--ligne);
+  
+  --radius-xs: 0px;
+  --radius-sm: 0px;
+  --radius-md: 0px;
+  --radius-lg: 0px;
+  --radius-xl: 0px;
+  --radius-2xl: 0px;
+  --radius-3xl: 0px;
+
+  --shadow-xs: none;
+  --shadow-sm: none;
+  --shadow-md: none;
+  --shadow-lg: none;
+  --shadow-xl: none;
+  --shadow-2xl: none;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+/* ── Base transitions ─────────────────────────────────────────────────── */
+*, *::before, *::after {
+  transition-property: color, background-color, border-color, box-shadow, opacity;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 120ms;
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+/* ── Focus ring cohérent ──────────────────────────────────────────────── */
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible {
+  outline: none;
+  border-color: var(--brun-700) !important;
+  background-color: #fff !important;
+  box-shadow: 0 0 0 3px rgba(107, 74, 48, 0.12);
+}
+
+button:focus-visible,
+a:focus-visible {
+  outline: 2px solid var(--brun-600);
+  outline-offset: 2px;
+}
+
+/* ── Scrollbar sur mesure ──────────────────────────────────────────────── */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--brun-100);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--brun-400);
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--brun-600);
+}
+
+/* ── Sélection de texte ────────────────────────────────────────────────── */
+::selection {
+  background: rgba(162, 124, 82, 0.25);
+  color: var(--brun-950);
 }

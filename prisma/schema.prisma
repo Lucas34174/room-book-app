@@ -1,6 +1,7 @@
 generator client {
-  provider = "prisma-client"
-  output   = "../app/generated/prisma"
+  provider        = "prisma-client"
+  previewFeatures = ["driverAdapters"]
+  output          = "../app/generated/prisma"
 }
 
 datasource db {
@@ -67,8 +68,22 @@ model User {
   role           AuthRole  @relation(fields: [roleId], references: [roleId], onDelete: Restrict)
   bookings       Booking[]
   logs           Log[]
+  resetTokens    PasswordResetToken[]
 
   @@map("users")
+}
+
+model PasswordResetToken {
+  tokenId    Int      @id @default(autoincrement()) @map("token_id")
+  userId     Int      @map("user_id")
+  token      String   @unique @db.VarChar(255)
+  expiresAt  DateTime @map("expires_at")
+  usedAt     DateTime? @map("used_at")
+  createdAt  DateTime @default(now()) @map("created_at")
+
+  user       User @relation(fields: [userId], references: [userId], onDelete: Cascade)
+
+  @@map("password_reset_tokens")
 }
 
 // ==========================================
@@ -158,6 +173,8 @@ model Booking {
 
   @@map("bookings")
 }
+
+
 
 // ==========================================
 // PERMISSIONS (RBAC)

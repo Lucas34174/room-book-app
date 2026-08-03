@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<title>Formulaire de réservation — RoomBook</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="topbar">
+  <div class="brand">Room<span>Book</span></div>
+  <nav>
+    <a href="accueil.html">Accueil</a>
+    <a href="mes-reservations.html">Réservations</a>
+    <a href="recherche-salle.html" class="active">Salles</a>
+    <a href="statistiques.html">Statistiques</a>
+    <a href="logs.html">Historique</a>
+  </nav>
+  <div class="user-zone">
+    <a href="notifications.html">Notifications<span class="notif-badge">3</span></a>
+    <a href="profil.html">Marie Dupont</a>
+  </div>
+</div>
+
+<div class="page-wrap" style="max-width:640px;">
+  <div class="page-header">
+    <h1>Formulaire de réservation</h1>
+  </div>
+
+  <div class="panel">
+    <p style="font-size:14px; margin-bottom:20px;">
+      <strong>Salle sélectionnée :</strong> Salle B12<br>
+      <strong>Créneau :</strong> 18/07/2026, 14h – 16h
+    </p>
+
+    <form action="confirmation-reservation.html">
+      <div class="field-row">
+        <div class="field">
+          <label>Date</label>
+          <input type="date" value="2026-07-18">
+        </div>
+        <div class="field">
+          <label>Heure de début</label>
+          <input type="time" value="14:00">
+        </div>
+        <div class="field">
+          <label>Heure de fin</label>
+          <input type="time" value="16:00">
+        </div>
+      </div>
+
+      <div class="field">
+        <label>Motif de la réservation</label>
+        <textarea rows="3" placeholder="Ex : Cours de mathématiques, groupe TD3"></textarea>
+      </div>
+
+      <div style="display:flex; gap:12px; margin-top:16px;">
+        <a href="accueil.html" class="btn-text" style="align-self:center;">Annuler</a>
+        <button class="btn" type="submit">Confirmer la réservation</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+</body>
+</html>

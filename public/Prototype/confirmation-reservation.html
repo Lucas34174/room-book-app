@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<title>Confirmation de réservation — RoomBook</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="topbar">
+  <div class="brand">Room<span>Book</span></div>
+  <nav>
+    <a href="accueil.html">Accueil</a>
+    <a href="mes-reservations.html">Réservations</a>
+    <a href="recherche-salle.html" class="active">Salles</a>
+    <a href="statistiques.html">Statistiques</a>
+    <a href="logs.html">Historique</a>
+  </nav>
+  <div class="user-zone">
+    <a href="notifications.html">Notifications<span class="notif-badge">3</span></a>
+    <a href="profil.html">Marie Dupont</a>
+  </div>
+</div>
+
+<div class="page-wrap" style="max-width:560px;">
+  <div class="page-header">
+    <h1>Confirmation</h1>
+  </div>
+
+  <div class="alert alert-success" style="margin-bottom:20px;">
+    Votre réservation a bien été enregistrée.
+  </div>
+
+  <div class="panel">
+    <div class="panel-title">Récapitulatif</div>
+    <p style="font-size:14px; margin-bottom:6px;"><strong>Salle :</strong> B12</p>
+    <p style="font-size:14px; margin-bottom:6px;"><strong>Date :</strong> 18/07/2026, 14h – 16h</p>
+    <p style="font-size:14px; margin-bottom:16px;">
+      <strong>Statut :</strong> <span class="tag tag-confirmee">Confirmée</span>
+      <span class="help-text">(ou « en attente » si validation requise selon le rôle)</span>
+    </p>
+
+    <div style="display:flex; gap:12px;">
+      <a href="mes-reservations.html" class="btn">Voir mes réservations</a>
+      <a href="accueil.html" class="btn-outline btn" style="border-color:var(--brun-500); color:var(--brun-800); background:transparent;">Retour à l'accueil</a>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

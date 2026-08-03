@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<title>Mon profil — RoomBook</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="topbar">
+  <div class="brand">Room<span>Book</span></div>
+  <nav>
+    <a href="accueil.html">Accueil</a>
+    <a href="mes-reservations.html">Réservations</a>
+    <a href="recherche-salle.html">Salles</a>
+    <a href="statistiques.html">Statistiques</a>
+    <a href="logs.html">Historique</a>
+  </nav>
+  <div class="user-zone">
+    <a href="notifications.html">Notifications<span class="notif-badge">3</span></a>
+    <a href="profil.html" class="active">Marie Dupont</a>
+  </div>
+</div>
+
+<div class="page-wrap" style="max-width:640px;">
+  <div class="page-header">
+    <h1>Mon profil</h1>
+  </div>
+
+  <div class="panel">
+    <form>
+      <div class="field-row">
+        <div class="field">
+          <label>Prénom</label>
+          <input type="text" value="Marie">
+        </div>
+        <div class="field">
+          <label>Nom</label>
+          <input type="text" value="Dupont">
+        </div>
+      </div>
+
+      <div class="field">
+        <label>Nom d'utilisateur</label>
+        <input type="text" value="marie.dupont">
+      </div>
+
+      <div class="field">
+        <label>Email</label>
+        <input type="email" value="marie.dupont@etablissement.mg">
+      </div>
+
+      <div class="field">
+        <label>Téléphone (optionnel)</label>
+        <input type="tel" placeholder="+261 34 00 000 00">
+      </div>
+
+      <div class="field">
+        <label>Rôle</label>
+        <input type="text" value="Enseignant" disabled style="background:var(--brun-200); color:var(--brun-600);">
+      </div>
+
+      <div style="display:flex; gap:12px; margin-top:20px;">
+        <button class="btn" type="submit">Enregistrer les modifications</button>
+        <a href="reinitialisation.html" class="btn btn-outline">Changer le mot de passe</a>
+      </div>
+    </form>
+  </div>
+</div>
+
+</body>
+</html>

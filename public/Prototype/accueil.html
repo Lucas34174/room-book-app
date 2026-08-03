@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<title>Accueil — RoomBook</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="topbar">
+  <div class="brand">Room<span>Book</span></div>
+  <nav>
+    <a href="accueil.html" class="active">Accueil</a>
+    <a href="mes-reservations.html">Réservations</a>
+    <a href="recherche-salle.html">Salles</a>
+    <a href="statistiques.html">Statistiques</a>
+    <a href="logs.html">Historique</a>
+  </nav>
+  <div class="user-zone">
+    <a href="notifications.html">Notifications<span class="notif-badge">3</span></a>
+    <a href="profil.html">Marie Dupont</a>
+  </div>
+</div>
+
+<div class="page-wrap">
+  <div class="page-header">
+    <h1>Bonjour, Marie Dupont</h1>
+    <div class="breadcrumb">Rôle : Enseignant</div>
+  </div>
+
+  <div class="grid-2" style="margin-bottom:24px;">
+    <a href="recherche-salle.html" style="text-decoration:none;">
+      <div class="action-tile">
+        <div class="tile-label">Rechercher une salle</div>
+        <div class="tile-sub">Filtrer par capacité, équipement et disponibilité</div>
+      </div>
+    </a>
+    <a href="calendrier.html" style="text-decoration:none;">
+      <div class="action-tile">
+        <div class="tile-label">Voir le calendrier</div>
+        <div class="tile-sub">Consulter les créneaux libres et occupés</div>
+      </div>
+    </a>
+  </div>
+
+  <div class="panel" style="margin-bottom:18px;">
+    <div class="panel-title">Mes prochaines réservations</div>
+    <table>
+      <tr><th>Salle</th><th>Date</th><th>Créneau</th><th>Statut</th><th></th></tr>
+      <tr>
+        <td>Salle B12</td><td>18/07/2026</td><td>14h – 16h</td>
+        <td><span class="tag tag-confirmee">Confirmée</span></td>
+        <td><a href="detail-reservation.html" class="btn-text">Détail</a></td>
+      </tr>
+      <tr>
+        <td>Salle A03</td><td>20/07/2026</td><td>10h – 12h</td>
+        <td><span class="tag tag-attente">En attente</span></td>
+        <td><a href="detail-reservation.html" class="btn-text">Détail</a></td>
+      </tr>
+    </table>
+    <div style="margin-top:12px;">
+      <a href="mes-reservations.html" class="btn-text">Voir toutes mes réservations</a>
+    </div>
+  </div>
+
+  <div class="grid-2">
+    <div class="panel">
+      <div class="panel-title">Service Validateur</div>
+      <p style="font-size:14px; margin-bottom:14px;">5 demande(s) en attente de traitement.</p>
+      <a href="demandes-attente.html" class="btn btn-outline">Voir les demandes</a>
+    </div>
+    <div class="panel">
+      <div class="panel-title">Administration</div>
+      <p style="font-size:14px; margin-bottom:14px;">2 compte(s) en attente · 12 salles enregistrées.</p>
+      <a href="statistiques.html" class="btn btn-outline">Voir les statistiques</a>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

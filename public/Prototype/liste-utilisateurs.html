@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<title>Liste des utilisateurs — RoomBook</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="topbar">
+  <div class="brand">Room<span>Book</span></div>
+  <nav>
+    <a href="accueil.html">Accueil</a>
+    <a href="liste-utilisateurs.html" class="active">Utilisateurs</a>
+    <a href="liste-salles.html">Salles</a>
+    <a href="statistiques.html">Statistiques</a>
+    <a href="logs.html">Historique</a>
+  </nav>
+  <div class="user-zone">
+    <a href="notifications.html">Notifications<span class="notif-badge">3</span></a>
+    <a href="profil.html">Administrateur</a>
+  </div>
+</div>
+
+<div class="page-wrap">
+  <div class="page-header">
+    <h1>Liste des utilisateurs</h1>
+  </div>
+  <div class="panel" style="margin-bottom:18px;">
+  <div class="field-row">
+    <div class="field">
+      <label>Filtrer par rôle</label>
+      <select>
+        <option>Tous</option>
+        <option>Validateur</option>
+        <option>Enseignant</option>
+        <option>Étudiants</option>
+      </select>
+    </div>
+    <div class="field">
+      <label>Filtrer par statut</label>
+      <select>
+        <option>Activé</option>
+        <option>Désactivé</option>
+      </select>
+    </div>
+    <div class="field">
+      <label>Rechercher (nom/email)</label>
+      <input type="text" placeholder="ex : dupont ou marie@...">
+      <div style="margin-top:8px;"><a href="#" class="btn btn-sm">Rechercher</a></div>
+    </div>
+  </div>
+</div>
+
+  <div class="panel" style="padding:0;">
+    <table>
+      <tr><th>Nom</th><th>Email</th><th>Rôle</th><th>Statut</th></tr>
+      <tr><td><a href="detail-utilisateur.html">Marie Dupont</a></td><td>
+</div>
+</div>
+
+</body>
+</html>

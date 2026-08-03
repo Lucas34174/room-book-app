@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<title>Ajouter / modifier une salle — RoomBook</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="topbar">
+  <div class="brand">Room<span>Book</span></div>
+  <nav>
+    <a href="accueil.html">Accueil</a>
+    <a href="liste-utilisateurs.html">Utilisateurs</a>
+    <a href="liste-salles.html" class="active">Salles</a>
+    <a href="statistiques.html">Statistiques</a>
+    <a href="logs.html">Historique</a>
+  </nav>
+  <div class="user-zone">
+    <a href="notifications.html">Notifications<span class="notif-badge">3</span></a>
+    <a href="profil.html">Administrateur</a>
+  </div>
+</div>
+
+<div class="page-wrap" style="max-width:640px;">
+  <div class="page-header">
+    <h1>Modifier la salle B12</h1>
+    <a href="liste-salles.html" class="breadcrumb" style="text-decoration:underline;">Retour</a>
+  </div>
+
+  <div class="panel">
+    <div class="field-row">
+      <div class="field">
+        <label>Nom de la salle</label>
+        <input type="text" value="Salle B12">
+      </div>
+      <div class="field">
+        <label>Capacité</label>
+        <input type="number" value="30">
+      </div>
+    </div>
+
+    <div class="field">
+      <label>Localisation</label>
+      <input type="text" value="Bâtiment A, 2e étage">
+    </div>
+
+    <div class="field">
+      <label>Description</label>
+      <textarea rows="3">Salle équipée pour cours magistraux, tableau fixe.</textarea>
+    </div>
+
+    <div class="field">
+      <label>Salle réservable</label>
+      <div class="checkbox-line"><input type="radio" name="bookable" checked> Oui</div>
+      <div class="checkbox-line"><input type="radio" name="bookable"> Non</div>
+    </div>
+
+    <div style="display:flex; gap:12px; margin-top:16px;">
+      <a href="liste-salles.html" class="btn">Enregistrer</a>
+      <a href="liste-salles.html" class="btn-text" style="align-self:center;">Annuler</a>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<title>Liste des salles — RoomBook</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="topbar">
+  <div class="brand">Room<span>Book</span></div>
+  <nav>
+    <a href="accueil.html">Accueil</a>
+    <a href="liste-utilisateurs.html">Utilisateurs</a>
+    <a href="liste-salles.html" class="active">Salles</a>
+    <a href="statistiques.html">Statistiques</a>
+    <a href="logs.html">Historique</a>
+  </nav>
+  <div class="user-zone">
+    <a href="notifications.html">Notifications<span class="notif-badge">3</span></a>
+    <a href="profil.html">Administrateur</a>
+  </div>
+</div>
+
+<div class="page-wrap">
+  <div class="page-header">
+    <h1>Liste des salles</h1>
+    <a href="ajouter-salle.html" class="btn btn-sm">Ajouter une salle</a>
+  </div>
+
+  <div class="panel" style="padding:0;">
+    <table>
+      <tr><th>Salle</th><th>Capacité</th><th>Statut</th><th></th><th></th><th></th></tr>
+      <tr>
+        <td>Salle B12</td><td>30</td>
+        <td><span class="tag tag-active">Réservable</span></td>
+        <td><a href="ajouter-salle.html" class="btn-text">Modifier</a></td>
+        <td><a href="gestion-equipements.html" class="btn-text">Équipements</a></td>
+        <td><a href="gestion-creneaux.html" class="btn-text">Créneaux</a></td>
+      </tr>
+      <tr>
+        <td>Salle A03</td><td>25</td>
+        <td><span class="tag tag-active">Réservable</span></td>
+        <td><a href="ajouter-salle.html" class="btn-text">Modifier</a></td>
+        <td><a href="gestion-equipements.html" class="btn-text">Équipements</a></td>
+        <td><a href="gestion-creneaux.html" class="btn-text">Créneaux</a></td>
+      </tr>
+      <tr>
+        <td>Salle C01</td><td>40</td>
+        <td><span class="tag tag-inactive">Non réservable (travaux)</span></td>
+        <td><a href="ajouter-salle.html" class="btn-text">Modifier</a></td>
+        <td><a href="gestion-equipements.html" class="btn-text">Équipements</a></td>
+        <td><a href="gestion-creneaux.html" class="btn-text">Créneaux</a></td>
+      </tr>
+    </table>
+  </div>
+</div>
+
+</body>
+</html>

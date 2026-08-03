@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<title>Mes réservations — RoomBook</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="topbar">
+  <div class="brand">Room<span>Book</span></div>
+  <nav>
+    <a href="accueil.html">Accueil</a>
+    <a href="mes-reservations.html" class="active">Réservations</a>
+    <a href="recherche-salle.html">Salles</a>
+    <a href="statistiques.html">Statistiques</a>
+    <a href="logs.html">Historique</a>
+  </nav>
+  <div class="user-zone">
+    <a href="notifications.html">Notifications<span class="notif-badge">3</span></a>
+    <a href="profil.html">Marie Dupont</a>
+  </div>
+</div>
+
+<div class="page-wrap">
+  <div class="page-header">
+    <h1>Mes réservations</h1>
+  </div>
+
+  <div class="panel" style="margin-bottom:18px;">
+    <form>
+      
+      <div class="field-row">
+        <div class="field">
+            <label>Statut</label>
+            <select>
+                <option>Tous</option>
+                <option>En attente</option>
+                <option>Confirmée</option>
+                <option>Refusée</option>
+            </select>
+        </div>
+        <div class="field">
+          <label>Date</label>
+          <input type="date">
+        </div>
+        <div class="field">
+          <label>Heure</label>
+          <input type="time">
+        </div>
+        <div class="field"> 
+            <label>  _ </label>
+            <button class="btn" type="submit">Rechercher</button>
+        </div>
+      </div>
+    </form>
+  </div>
+
+  <div class="panel" style="padding:0;">
+    <table>
+      <tr><th>Salle</th><th>Date</th><th>Créneau</th><th>Motif</th><th>Statut</th><th></th></tr>
+      <tr>
+        <td>Salle B12</td><td>18/07/2026</td><td>14h–16h</td><td>Cours de mathématiques</td>
+        <td><span class="tag tag-confirmee">Confirmée</span></td>
+        <td><a href="detail-reservation.html" class="btn-text">Détail</a></td>
+      </tr>
+      <tr>
+        <td>Salle A03</td><td>20/07/2026</td><td>10h–12h</td><td>Réunion pédagogique</td>
+        <td><span class="tag tag-attente">En attente</span></td>
+        <td><a href="detail-reservation.html" class="btn-text">Détail</a></td>
+      </tr>
+      <tr>
+        <td>Salle C01</td><td>10/07/2026</td><td>09h–11h</td><td>Conférence club robotique</td>
+        <td><span class="tag tag-refusee">Refusée</span></td>
+        <td><a href="detail-reservation.html" class="btn-text">Détail</a></td>
+      </tr>
+    </table>
+  </div>
+</div>
+
+</body>
+</html>

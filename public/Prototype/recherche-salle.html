@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<title>Rechercher une salle — RoomBook</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="topbar">
+  <div class="brand">Room<span>Book</span></div>
+  <nav>
+    <a href="accueil.html">Accueil</a>
+    <a href="mes-reservations.html">Réservations</a>
+    <a href="recherche-salle.html" class="active">Salles</a>
+    <a href="statistiques.html">Statistiques</a>
+    <a href="logs.html">Historique</a>
+  </nav>
+  <div class="user-zone">
+    <a href="notifications.html">Notifications<span class="notif-badge">3</span></a>
+    <a href="profil.html">Marie Dupont</a>
+  </div>
+</div>
+
+<div class="page-wrap">
+  <div class="page-header">
+    <h1>Recherche de salle</h1>
+  </div>
+
+  <div class="panel" style="margin-bottom:22px;">
+    <form>
+      <div class="field-row">
+        <div class="field">
+          <label>Date souhaitée</label>
+          <input type="date">
+        </div>
+        <div class="field">
+          <label>Capacité</label>
+          <input type="number" placeholder="ex : 20">
+        </div>
+        <div class="field">
+          <label>Heure de début</label>
+          <input type="time">
+        </div>
+      </div>
+
+      <div class="field">
+        <label>Équipement</label>
+        <div class="checkbox-line"><input type="checkbox" checked> Vidéoprojecteur</div>
+        <div class="checkbox-line"><input type="checkbox"> Ordinateur</div>
+        <div class="checkbox-line"><input type="checkbox"> Sono</div>
+        <div class="checkbox-line"><input type="checkbox"> Tableau blanc</div>
+      </div>
+
+      <button class="btn" type="submit">Rechercher</button>
+    </form>
+  </div>
+
+  <div class="panel" style="padding:0;">
+    <table>
+      <tr><th>Salle</th><th>Capacité</th><th>Équipements</th><th></th></tr>
+      <tr>
+        <td>Salle B12</td><td>30</td><td>Vidéoprojecteur, Ordinateur</td>
+        <td><a href="detail-salle.html" class="btn-text">Voir</a></td>
+      </tr>
+      <tr>
+        <td>Salle A03</td><td>25</td><td>Vidéoprojecteur</td>
+        <td><a href="detail-salle.html" class="btn-text">Voir</a></td>
+      </tr>
+      <tr>
+        <td>Salle C01</td><td>40</td><td>Vidéoprojecteur, Sono</td>
+        <td><a href="detail-salle.html" class="btn-text">Voir</a></td>
+      </tr>
+    </table>
+  </div>
+</div>
+
+</body>
+</html>

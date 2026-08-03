@@ -1,0 +1,49 @@
+﻿DESIGN THINKING
+
+1. EMPATHIZE:
+Les Personas:
+Persona 1 — L'Enseignant
+    • Rôle : réserve une salle pour ses cours ou activités pédagogiques 
+    • Besoin : trouver rapidement une salle libre et réserver sans validation 
+    • Problème actuelle : doit vérifier manuellement le fichier Excel, risque de double réservation, perte de temps 
+Persona 2 — Le Demandeur (Étudiant / Association)
+    • Rôle : réserve une salle à titre individuel (travail de groupe) ou au nom d'une association (réunion), validation obligatoire. 
+    • Besoin : trouver une salle adaptée à son besoin :capacité, matériel : vidéoprojecteur, sono, autre et suivre le statut de sa demande 
+    • Frustration actuelle : pas de visibilité sur les disponibilités, aucun moyen officiel/structuré de réserver, échanges informels avec le service logistique, délais flous 
+Persona 3 — Le Service Validateur (logistique)
+    • Rôle : valide ou refuse les demandes de réservation des étudiants et associations 
+    • Besoin : outil simple pour visualiser, traiter et historiser les demandes en attente 
+    • Frustration actuelle : aucun outil dédié, tout passe par email/Excel, pas de traçabilité 
+Persona 4 — L'Administrateur
+    • Rôle : supervise l'ensemble du système, gère les salles/équipements/utilisateurs, consulte les statistiques 
+    • Besoin : vue d'ensemble de l'utilisation des salles, export de données pour rapports 
+    • Frustration actuelle : aucune donnée exploitable, tout est dispersé 
+
+2. DEFINE
+Problème principal:
+Les enseignants et responsables d'association n'ont pas de moyen fiable et centralisé de connaître la disponibilité des salles, ce qui génère des conflits de réservation, une perte de temps, et une absence de visibilité pour l'administration sur l'utilisation réelle des espaces.
+Sous-problèmes:
+    1. Conflits de créneaux : deux réservations sur le même créneau d’une salle 
+    2. Manque de différenciation des salles : impossible de filtrer par capacité et équipement 
+    3. Absence de workflow de validation : rien ne distingue une réservation enseignant d'une demande association
+    4. Absence de traçabilité/statistiques : l'administration ne peut pas piloter l'usage des salles
+
+
+3. IDEATE
+Fonctionnalité demandé
+Idée
+Gestion des Conflits de réservation
+    • Calendrier visuel par salle avec créneaux libres/occupés en temps réel 
+    • Verrouillage automatique du créneau dès qu'une réservation enseignant est validée 
+    • Alerte système si tentative de réservation sur un créneau déjà pris 
+Pour la recherche/filtrage de salle
+    • Moteur de recherche avec filtres : capacité min, équipement requis 
+    • Vue "salles disponibles maintenant" par défaut 
+Pour le workflow de validation
+    • Statut de réservation visible : en attente, confirmée, refusée  
+    • Tableau de bord dédié au service logistique listant les demandes en attente 
+    • Notification email automatique à chaque changement de statut 
+Pour le pilotage administratif
+    • Tableau de bord avec statistiques:taux d'occupation par salle, par créneau horaire
+    • Export CSV/PDF des données de réservation 
+    • Table logs pour tracer les actions

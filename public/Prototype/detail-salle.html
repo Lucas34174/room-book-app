@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<title>Salle B12 — RoomBook</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="topbar">
+  <div class="brand">Room<span>Book</span></div>
+  <nav>
+    <a href="accueil.html">Accueil</a>
+    <a href="mes-reservations.html">Réservations</a>
+    <a href="recherche-salle.html" class="active">Salles</a>
+    <a href="statistiques.html">Statistiques</a>
+    <a href="logs.html">Historique</a>
+  </nav>
+  <div class="user-zone">
+    <a href="notifications.html">Notifications<span class="notif-badge">3</span></a>
+    <a href="profil.html">Marie Dupont</a>
+  </div>
+</div>
+
+<div class="page-wrap">
+  <div class="page-header">
+    <h1>Salle B12</h1>
+    <a href="recherche-salle.html" class="breadcrumb" style="text-decoration:underline;">Retour aux résultats</a>
+  </div>
+
+  <div class="grid-2">
+    <div class="panel">
+      <div class="panel-title">Informations</div>
+      <p style="font-size:14px; margin-bottom:8px;"><strong>Capacité :</strong> 30 places</p>
+      <p style="font-size:14px; margin-bottom:8px;"><strong>Localisation :</strong> Bâtiment A, 2e étage</p>
+      <p style="font-size:14px; margin-bottom:16px;"><strong>Description :</strong> Salle équipée pour cours magistraux, tableau fixe.</p>
+
+      <div class="panel-title">Équipements</div>
+      <table>
+        <tr><td>Vidéoprojecteur</td><td><span class="tag tag-active">Utilisable</span></td></tr>
+        <tr><td>Ordinateur</td><td><span class="tag tag-active">Utilisable</span></td></tr>
+        <tr><td>Sono</td><td><span class="tag tag-inactive">Maintenance</span></td></tr>
+      </table>
+    </div>
+
+    <div class="panel">
+      <div class="panel-title">Disponibilité (aperçu)</div>
+      <div class="cal-grid">
+        <div class="cal-head">Heure</div>
+        <div class="cal-head">Lun</div><div class="cal-head">Mar</div><div class="cal-head">Mer</div>
+        <div class="cal-head">Jeu</div><div class="cal-head">Ven</div><div class="cal-head">Sam</div>
+        <div class="cal-time">08–10h</div>
+        <div class="cal-cell occ"></div><div class="cal-cell free"></div><div class="cal-cell free"></div>
+        <div class="cal-cell occ"></div><div class="cal-cell free"></div><div class="cal-cell free"></div>
+        <div class="cal-time">10–12h</div>
+        <div class="cal-cell free"></div><div class="cal-cell occ"></div><div class="cal-cell free"></div>
+        <div class="cal-cell free"></div><div class="cal-cell occ"></div><div class="cal-cell free"></div>
+        <div class="cal-time">14–16h</div>
+        <div class="cal-cell occ"></div><div class="cal-cell free"></div><div class="cal-cell occ"></div>
+        <div class="cal-cell free"></div><div class="cal-cell free"></div><div class="cal-cell free"></div>
+      </div>
+      <div style="margin-top:20px;">
+        <a href="formulaire-reservation.html" class="btn">Réserver cette salle</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

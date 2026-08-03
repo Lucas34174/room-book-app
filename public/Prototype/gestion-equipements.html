@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<title>Gestion des équipements — RoomBook</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="topbar">
+  <div class="brand">Room<span>Book</span></div>
+  <nav>
+    <a href="accueil.html">Accueil</a>
+    <a href="liste-utilisateurs.html">Utilisateurs</a>
+    <a href="liste-salles.html" class="active">Salles</a>
+    <a href="statistiques.html">Statistiques</a>
+    <a href="logs.html">Historique</a>
+  </nav>
+  <div class="user-zone">
+    <a href="notifications.html">Notifications<span class="notif-badge">3</span></a>
+    <a href="profil.html">Administrateur</a>
+  </div>
+</div>
+
+<div class="page-wrap" style="max-width:760px;">
+  <div class="page-header">
+    <h1>Équipements — Salle B12</h1>
+    <a href="liste-salles.html" class="breadcrumb" style="text-decoration:underline;">Retour</a>
+  </div>
+
+  <div class="panel" style="padding:0; margin-bottom:18px;">
+    <table>
+      <tr><th>Équipement</th><th>Quantité</th><th>Utilisable</th></tr>
+      <tr><td>Vidéoprojecteur</td><td>1</td><td><span class="tag tag-active">Oui</span></td></tr>
+      <tr><td>Ordinateur</td><td>1</td><td><span class="tag tag-active">Oui</span></td></tr>
+      <tr><td>Sono</td><td>1</td><td><span class="tag tag-inactive">Non (maintenance)</span></td></tr>
+    </table>
+  </div>
+
+  <div class="panel">
+    <div class="panel-title">Ajouter un équipement</div>
+    <div class="field-row">
+      <div class="field">
+        <label>Équipement</label>
+        <select>
+          <option>Vidéoprojecteur</option>
+          <option>Ordinateur</option>
+          <option>Sono</option>
+          <option>Tableau blanc</option>
+        </select>
+      </div>
+      <div class="field">
+        <label>Quantité</label>
+        <input type="number" value="1">
+      </div>
+    </div>
+    <div style="display:flex; gap:12px;">
+      <a href="liste-salles.html" class="btn btn-sm">Ajouter</a>
+      <a href="liste-salles.html" class="btn btn-outline btn-sm">Enregistrer</a>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

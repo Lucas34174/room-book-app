@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<title>Calendrier des salles — RoomBook</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="topbar">
+  <div class="brand">Room<span>Book</span></div>
+  <nav>
+    <a href="accueil.html">Accueil</a>
+    <a href="mes-reservations.html">Réservations</a>
+    <a href="recherche-salle.html" class="active">Salles</a>
+    <a href="statistiques.html">Statistiques</a>
+    <a href="logs.html">Historique</a>
+  </nav>
+  <div class="user-zone">
+    <a href="notifications.html">Notifications<span class="notif-badge">3</span></a>
+    <a href="profil.html">Marie Dupont</a>
+  </div>
+</div>
+
+<div class="page-wrap">
+  <div class="page-header">
+    <h1>Calendrier des salles</h1>
+  </div>
+
+  <div class="panel">
+    <div class="field" style="max-width:280px; margin-bottom:20px;">
+      <label>Choisir une salle</label>
+      <select>
+        <option>Salle B12</option>
+        <option>Salle A03</option>
+        <option>Salle C01</option>
+      </select>
+    </div>
+
+    <div class="cal-grid">
+      <div class="cal-head">Heure</div>
+      <div class="cal-head">Lun</div><div class="cal-head">Mar</div><div class="cal-head">Mer</div>
+      <div class="cal-head">Jeu</div><div class="cal-head">Ven</div><div class="cal-head">Sam</div>
+
+      <div class="cal-time">08–10h</div>
+      <div class="cal-cell occ"></div><div class="cal-cell free"></div><div class="cal-cell free"></div>
+      <div class="cal-cell occ"></div><div class="cal-cell free"></div><div class="cal-cell free"></div>
+
+      <div class="cal-time">10–12h</div>
+      <div class="cal-cell free"></div><div class="cal-cell occ"></div><div class="cal-cell free"></div>
+      <div class="cal-cell free"></div><div class="cal-cell occ"></div><div class="cal-cell free"></div>
+
+      <div class="cal-time">12–14h</div>
+      <div class="cal-cell free"></div><div class="cal-cell free"></div><div class="cal-cell free"></div>
+      <div class="cal-cell free"></div><div class="cal-cell free"></div><div class="cal-cell free"></div>
+
+      <div class="cal-time">14–16h</div>
+      <div class="cal-cell occ"></div><div class="cal-cell free"></div><div class="cal-cell occ"></div>
+      <div class="cal-cell free"></div><div class="cal-cell free"></div><div class="cal-cell free"></div>
+
+      <div class="cal-time">16–18h</div>
+      <div class="cal-cell free"></div><div class="cal-cell free"></div><div class="cal-cell free"></div>
+      <div class="cal-cell occ"></div><div class="cal-cell free"></div><div class="cal-cell free"></div>
+    </div>
+
+    <p class="help-text" style="margin-top:14px;">Case pleine = créneau occupé · Case vide = créneau libre</p>
+
+    <a href="formulaire-reservation.html" class="btn">Réserver un créneau</a>
+  </div>
+</div>
+
+</body>
+</html>
